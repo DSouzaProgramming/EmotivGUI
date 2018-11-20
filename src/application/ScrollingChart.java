@@ -11,7 +11,7 @@ import javafx.scene.chart.Chart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-
+// git instructions: git commit, git push to update
 public class ScrollingChart 
 {
 	private LineChart<Number, Number> chart;
@@ -44,13 +44,11 @@ public class ScrollingChart
 		actionPower.setVerticalGridLinesVisible(false);
 		return actionPower;
 	}
-	static public double insertData()
+	public void insertData() // in main write "while(true) { run timer, insert data }
 	{
-		double data = 0;
-		// get data from headset
+		XYChart.Data data = new XYChart.Data(/*insert data from headset*/);
 		
-		// 
+		dataSeries.getData().add(data);
 		
-		return data;
 	}
 }
