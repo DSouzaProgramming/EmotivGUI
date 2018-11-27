@@ -55,10 +55,10 @@ public class Main extends Application {
 			
 			// Profile Selector Start
 			
-			ChoiceBox profiles = new ChoiceBox();
-			ObservableList<String> profilenames = FXCollections.observableArrayList("Profile 1", "Profile 2", "Profile 3");
-			profiles.setItems(profilenames);
-			MainGUI.setRight(profiles);
+			//ChoiceBox profiles = new ChoiceBox();
+			//ObservableList<String> profilenames = FXCollections.observableArrayList("Profile 1", "Profile 2", "Profile 3");
+			//profiles.setItems(profilenames);
+			//MainGUI.setRight(profiles);
 			
 			// Profile Selector End
 			
@@ -89,7 +89,8 @@ public class Main extends Application {
 			scene.setFill(Color.HOTPINK); // make background pink (doesn't work anymore :( )
 			primaryStage.setScene(scene); // initialize
 			primaryStage.show(); // scene pops up
-			 
+			
+			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
