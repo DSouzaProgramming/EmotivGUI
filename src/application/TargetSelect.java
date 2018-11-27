@@ -12,18 +12,18 @@ public class TargetSelect {
 	
 	private static RadioButton RC = new RadioButton(); // create RC button
 	
-	private static RadioButton lights = new RadioButton(); // create lights button
+	private static RadioButton home = new RadioButton(); // create home button
 	
 	
-	public void RadioInit()
+	static public void RadioInit()
 	{
-		RC.setText("RC       "); // spaces used to move lights button further away
+		RC.setText("RC       "); // spaces used to move home button further away
 		RC.setId("RC");
-		lights.setText("Lights");
-		lights.setId("lights");
+		home.setText("home");
+		home.setId("home");
 		ToggleGroup systems = new ToggleGroup(); // create group for buttons to join
 		RC.setToggleGroup(systems); // put both buttons in group
-		lights.setToggleGroup(systems);
+		home.setToggleGroup(systems);
 		
 		//I can't believe this is how you make buttons work in Java
 		RC.setOnAction(new EventHandler<ActionEvent>() { // override to change target to RC
@@ -32,20 +32,20 @@ public class TargetSelect {
             }
         });
 		
-		lights.setOnAction(new EventHandler<ActionEvent>() { // override to change target to lights
+		home.setOnAction(new EventHandler<ActionEvent>() { // override to change target to home
             @Override public void handle(ActionEvent e) {
-                setTarget(lights);
+                setTarget(home);
             }
         });
 		
 		HBox buttons = new HBox(); // new horizontal box for buttons
 		
 		buttons.getChildren().add(RC); // put buttons into box
-		buttons.getChildren().add(lights);
+		buttons.getChildren().add(home);
 		buttons.setPadding(new Insets(0.0,0.0,10.0,450.0));
 	}
 	
-	public void setTarget(RadioButton target)
+	static public void setTarget(RadioButton target)
 	{
 		// this is probably Aiden's job
 		String focus = target.getId();
@@ -53,9 +53,9 @@ public class TargetSelect {
 		{
 			// changes target of the headset to RC
 		}
-		else if(focus == "lights")
+		else if(focus == "home")
 		{
-			// changes target of the headset to lights
+			// changes target of the headset to home
 		}
 		else
 		{
