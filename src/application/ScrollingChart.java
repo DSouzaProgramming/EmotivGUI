@@ -44,11 +44,11 @@ public class ScrollingChart
 		actionPower.setVerticalGridLinesVisible(false);
 		return actionPower;
 	}
-	public void insertData() // in main write "while(true) { run timer, insert data }
+	/*public void insertData() // in main write "while(true) { run timer, insert data }
 	{
-		XYChart.Data data = new XYChart.Data(/*insert data from headset*/);
+		XYChart.Data data = new XYChart.Data(/*insert data from headset);
 		
 		dataSeries.getData().add(data);
 		
-	}
+	} */
 }

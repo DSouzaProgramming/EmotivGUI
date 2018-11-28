@@ -2,10 +2,12 @@ package application;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ChoiceBox;
 
 public class ProfileList {
 	
-	static ObservableList<String> DropDown = FXCollections.observableArrayList();
+	public static ObservableList<String> DropDown = FXCollections.observableArrayList();
+	public static ChoiceBox profiles = new ChoiceBox();
 	
 	static public void addProfile(String name) 
 	{

@@ -10,20 +10,21 @@ import javafx.scene.layout.HBox;
 
 public class TargetSelect {
 	
-	private static RadioButton RC = new RadioButton(); // create RC button
+	public static RadioButton RC = new RadioButton(); // create RC button
 	
-	private static RadioButton home = new RadioButton(); // create home button
+	public static RadioButton home = new RadioButton(); // create home button
 	
+	public static ToggleGroup systems = new ToggleGroup(); // create group for buttons to join
 	
 	static public void RadioInit()
 	{
 		RC.setText("RC       "); // spaces used to move home button further away
 		RC.setId("RC");
-		home.setText("home");
+		home.setText("Home");
 		home.setId("home");
-		ToggleGroup systems = new ToggleGroup(); // create group for buttons to join
-		RC.setToggleGroup(systems); // put both buttons in group
-		home.setToggleGroup(systems);
+		
+		TargetSelect.RC.setToggleGroup(TargetSelect.systems); // put both buttons in group
+		TargetSelect.home.setToggleGroup(TargetSelect.systems);
 		
 		//I can't believe this is how you make buttons work in Java
 		RC.setOnAction(new EventHandler<ActionEvent>() { // override to change target to RC
@@ -37,12 +38,6 @@ public class TargetSelect {
                 setTarget(home);
             }
         });
-		
-		HBox buttons = new HBox(); // new horizontal box for buttons
-		
-		buttons.getChildren().add(RC); // put buttons into box
-		buttons.getChildren().add(home);
-		buttons.setPadding(new Insets(0.0,0.0,10.0,450.0));
 	}
 	
 	static public void setTarget(RadioButton target)

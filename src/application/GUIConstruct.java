@@ -1,22 +1,37 @@
 package application;
 
+import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class GUIConstruct {
-	public void buildGUI()
+	public static BorderPane MainGUI = new BorderPane(); // create BorderPane
+	public static Scene scene = new Scene(MainGUI, 1000, 1000);
+	public static Stage primaryStage = new Stage();
+	
+	public static void buildGUI()
 	{
+		
 		LineChart chart = ScrollingChart.createChart();
 		
-		// future class positions every box
-		// Alignment.setPosition(chart) or something similar
+		ProfileList.profiles.setItems(ProfileList.DropDown);
 		
-		//add new class to put buttons in box
-		//AddToBox(RadioInit().RC)
-		//AddToBox(RadioInit().Home)
+		VBox left = BoxBuild.InitProfileBox();
+		HBox bottom = BoxBuild.InitRadioBox();
+		HBox top = BoxBuild.TitleBox();
 		
-		ChoiceBox profiles = new ChoiceBox();
-		profiles.setItems(ProfileList.DropDown);
+		MainGUI.setLeft(left);
+		MainGUI.setBottom(bottom);
+		MainGUI.setCenter(chart);
+		MainGUI.setTop(top);
 		
+		scene.setFill(Color.HOTPINK); // make background pink (doesn't work anymore :( )
+		primaryStage.setScene(scene); // initialize
+		primaryStage.show(); // scene pops up
 	}
 }
