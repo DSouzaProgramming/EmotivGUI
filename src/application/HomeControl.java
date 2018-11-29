@@ -29,13 +29,13 @@ public class HomeControl {
             	{
             		lightStatus.setText("Light On");
             		lightStatus.setId("on");
-            		//turn light on, unimplemented
+            		ToggleLight();
             	}
             	else if(lightStatus.getId() == "on")
             	{
             		lightStatus.setText("Light Off");
             		lightStatus.setId("off");
-            		// turn light off, unimplemented
+            		ToggleLight();
             	}
             }
         });
@@ -48,16 +48,26 @@ public class HomeControl {
             	{
             		outletStatus.setText("Outlet On");
             		outletStatus.setId("on");
-            		//turn outlet on, unimplemented
+            		ToggleOutlet();
             	}
             	else if(outletStatus.getId() == "on")
             	{
             		outletStatus.setText("Outlet Off");
             		outletStatus.setId("off");
-            		// turn outlet off, unimplemented
+            		ToggleOutlet();
             	}
             }
         });
+	}
+	
+	static private void ToggleLight()
+	{
+		// code code code
+	}
+	
+	static private void ToggleOutlet()
+	{
+		// code code code
 	}
 
 }
