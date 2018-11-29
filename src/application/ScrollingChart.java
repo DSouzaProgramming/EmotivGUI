@@ -12,7 +12,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 // git instructions: git commit, git push to update
-public class ScrollingChart 
+public class ScrollingChart  // this is a mess don't look in here
 {
 	private LineChart<Number, Number> chart;
 

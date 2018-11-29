@@ -15,16 +15,16 @@ public class BoxBuild {
 	
 	
 
-	static public HBox InitRadioBox()
+	static public HBox InitRadioBox() // box containing radio buttons for switching headset target
 	{
 		TargetSelect.RadioInit();
 		HBox buttons = new HBox(); // new horizontal box for buttons
 		buttons.getChildren().add(TargetSelect.RC);
 		buttons.getChildren().add(TargetSelect.home);
-		buttons.setPadding(new Insets(0,0,0,450));
+		buttons.setPadding(new Insets(0,0,0,450)); // pads box over to the right by 450 arbitrary distance units?
 		return buttons;
 	}
-	static public HBox TitleBox()
+	static public HBox TitleBox() // currently defunct, may remove
 	{	
 		HBox title = new HBox();
 		Text t = new Text(); // new text structure
@@ -35,7 +35,7 @@ public class BoxBuild {
 		title.getChildren().add(t); // add text to horizontal box
 		return title;
 	}
-	static public VBox InitProfileBox()
+	static public VBox InitProfileBox() // creates box for profile list to live in
 	{
 		VBox profileList = new VBox();
 		profileList.getChildren().add(ProfileList.profiles);
@@ -43,10 +43,10 @@ public class BoxBuild {
 		return profileList;
 	}
 	
-	static public VBox InitSwitches()
+	static public VBox InitSwitches() //creates box containing switches for tab 1
 	{
 		VBox switches = new VBox();
-		HomeControl.lightSwitchInit();
+		HomeControl.lightSwitchInit(); //handles button logic
 		switches.getChildren().add(HomeControl.lightswitch);
 		switches.getChildren().add(HomeControl.lightStatus);
 		switches.getChildren().add(HomeControl.outlet);

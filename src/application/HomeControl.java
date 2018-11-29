@@ -15,7 +15,7 @@ public class HomeControl {
 	
 	static public Text lightStatus = new Text();
 	
-	static public void lightSwitchInit()
+	static public void lightSwitchInit() // button logic
 	{
 		lightStatus.setText("Light Off");
 		lightStatus.setId("off");
@@ -29,13 +29,13 @@ public class HomeControl {
             	{
             		lightStatus.setText("Light On");
             		lightStatus.setId("on");
-            		//turn light on
+            		//turn light on, unimplemented
             	}
             	else if(lightStatus.getId() == "on")
             	{
             		lightStatus.setText("Light Off");
             		lightStatus.setId("off");
-            		// turn light off
+            		// turn light off, unimplemented
             	}
             }
         });
@@ -48,13 +48,13 @@ public class HomeControl {
             	{
             		outletStatus.setText("Outlet On");
             		outletStatus.setId("on");
-            		//turn light on
+            		//turn outlet on, unimplemented
             	}
             	else if(outletStatus.getId() == "on")
             	{
             		outletStatus.setText("Outlet Off");
             		outletStatus.setId("off");
-            		// turn light off
+            		// turn outlet off, unimplemented
             	}
             }
         });
