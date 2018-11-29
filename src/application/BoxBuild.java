@@ -2,13 +2,18 @@ package application;
 
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class BoxBuild {
+	
+	
 
 	static public HBox InitRadioBox()
 	{
@@ -37,6 +42,18 @@ public class BoxBuild {
 		ProfileList.addProfile("Aiden");
 		return profileList;
 	}
+	
+	static public VBox InitSwitches()
+	{
+		VBox switches = new VBox();
+		HomeControl.lightSwitchInit();
+		switches.getChildren().add(HomeControl.lightswitch);
+		switches.getChildren().add(HomeControl.lightStatus);
+		switches.getChildren().add(HomeControl.outlet);
+		switches.getChildren().add(HomeControl.outletStatus);
+		return switches;
+	}
+	
 	
 	
 	
